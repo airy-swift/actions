@@ -18,8 +18,7 @@ jobs:
         run: flutter pub get
       - name: Linter
         run: flutter analyze
-      - name: Bump build number
-      - name: Git config
+      - name: Version up
         run: |
           perl -i -pe 's/^(version:\s+\d+\.\d+\.\d+\+)(\d+)$/$1.($2+1)/e' pubspec.yaml
           git remote set-url origin https://github-actions:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}
