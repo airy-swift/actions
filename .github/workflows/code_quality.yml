@@ -21,12 +21,10 @@ jobs:
       - name: Bump build number
         run: perl -i -pe 's/^(version:\s+\d+\.\d+\.\d+\+)(\d+)$/$1.($2+1)/e' pubspec.yaml
       - name: Git config
-        run: |-
+        run: |
           git remote set-url origin https://github-actions:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}
           git config --local user.name "$(git --no-pager log --format=format:'%an' -n 1)"
           git config --local user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
-      - name: Version up
-        run: |-
 #          perl -i -pe 's/^(version:\s+\d+\.\d+\.\d+\+)(\d+)$/$1.($2+1)/e' pubspec.yaml
 #          version=`grep 'version: ' pubspec.yaml | sed 's/version: //'`
           git commit -m "Bump version to $version" pubspec.yaml
