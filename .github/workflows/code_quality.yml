@@ -21,6 +21,6 @@ jobs:
      run: flutter test
    - name: Version up
      run: |
-       git config --local user.name airy-swift
-       git config --local user.email thanks.xa@gmail.com
+       git config --local user.name "$(git --no-pager log --format=format:'%an' -n 1)"
+       git config --local user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
        sh shell_script/version_auto_increment.sh
