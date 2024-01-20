@@ -20,4 +20,7 @@ jobs:
    - name: Test
      run: flutter test
    - name: Version up
-     run: sh shell_script/version_auto_increment.sh
+     run: |
+       git config --local user.name airy-swift
+       git config --local user.email thanks.xa@gmail.com
+       sh shell_script/version_auto_increment.sh
