@@ -52,7 +52,7 @@ jobs:
           flutter-version: '3.16.8'
           cache: true
       - name: show
-        run: echo "HEAD_COMMIT_MESSAGE=$(git show -s --format=%s)" >> "$GITHUB_OUTPUT"
+        run: echo "HEAD_COMMIT_MESSAGE=$(git show -s --format=%s)"
       - name: Commit message
         run: echo "${{ github.event.head_commit.message }}"
 
