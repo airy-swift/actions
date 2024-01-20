@@ -51,6 +51,7 @@ jobs:
         with:
           flutter-version: '3.16.8'
           cache: true
-      - name: Install packages
-        run: flutter pub get
+      - name: Commit message
+        run: echo github.event.head_commit.message
+
 
