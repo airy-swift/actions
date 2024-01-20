@@ -52,6 +52,6 @@ jobs:
           flutter-version: '3.16.8'
           cache: true
       - name: Commit message
-        run: echo ${{ github.event.head_commit.message }}
+        run: echo "${{ github.event.head_commit.message }}"
 
 
